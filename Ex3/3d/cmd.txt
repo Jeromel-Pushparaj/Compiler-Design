@@ -1,0 +1,9 @@
+lex calculator.l
+yacc -d calculator.y
+gcc y.tab.c lex.yy.c -o calculator -ll
+./calculator
+
+
+6*(2+3)
+
+Result: 30

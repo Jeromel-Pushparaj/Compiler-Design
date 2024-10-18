@@ -1,0 +1,18 @@
+lex variable_name.l
+gcc lex.yy.c -o variable_checker -ll
+./variable_checker
+
+
+output
+Enter variable names (CTRL+D to stop):
+_hello
+Valid variable: _hello
+
+Enter variable names (CTRL+D to stop):
+_hello
+Valid variable: _hello
+
+Enter variable names (CTRL+D to stop):
+1hello
+Invalid variable (starts with digit): 1
+Valid variable: hello

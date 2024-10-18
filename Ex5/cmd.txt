@@ -1,0 +1,13 @@
+lex type_checking.l
+yacc -d type_checking.y
+gcc y.tab.c lex.yy.c -o type_checker -ll
+./type_checker
+
+123
+Type:INTEGER
+123.897
+Type:FLOAT
+God
+Type:CHAR/STRING
+df24
+Invalid type or Parse error 

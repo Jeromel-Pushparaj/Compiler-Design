@@ -1,0 +1,24 @@
+lex control_structures.l
+gcc lex.yy.c -o control_checker -ll
+./control_checker
+
+if (x > 0) {
+    while (y < 10) {
+        for (int i = 0; i < 5; i++) {
+            // loop
+        }
+    }
+} else {
+    switch (z) {
+        case 1: break;
+        default: break;
+    }
+}
+
+Control structure: if
+Control structure: while
+Control structure: for
+Control structure: else
+Control structure: switch
+Control structure: case
+Control structure: default

@@ -1,0 +1,6 @@
+x = 5 * 2 + 3;
+
+output will reflect in program.txt after running the code
+t1 = 5 * 2
+t2 = t1 + 3
+x = t2

@@ -1,0 +1,10 @@
+lex arithmetic.l
+bison -dy arithmetic.y
+gcc y.tab.c lex.yy.c -o arithmetic_parser -ll
+./arithmetic_parser
+
+Input
+5 + 3 * 2;
+
+output
+11

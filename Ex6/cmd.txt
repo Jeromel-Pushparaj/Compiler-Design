@@ -1,0 +1,4 @@
+lex code_optimization.l
+yacc -d code_optimization.y
+gcc y.tab.c lex.yy.c -o optimizer -ll
+./optimizer

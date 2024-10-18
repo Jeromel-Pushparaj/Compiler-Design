@@ -1,0 +1,20 @@
+lex filename.l
+gcc lex.yy.c -o lexical_analyzer -ll
+./lexical_analyzer
+
+output
+
+Identifier: int
+Identifier: a
+Constant: 5
+Comment detected
+Identifier: b
+Identifier: a
+Operator: +
+Constant: 10
+
+Summary:
+Identifiers: 5
+Constants: 2
+Operators: 1
+Comments: 1
