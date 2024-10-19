@@ -1,0 +1,15 @@
+lex lex.l
+gcc lex.yy.c -o lexical_analyzer -ll
+./lexical_analyzer var.c
+
+ is a preprocessor directive
+ void is a keyword
+ Function:       main(  )
+
+ Block begins
+ int is a keyword
+ a is an Identifier
+ = is an Assignment operator
+ 10 is a number
+ int is a keyword
+ array[10] is an Identifier

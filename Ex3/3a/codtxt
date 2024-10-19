@@ -1,0 +1,61 @@
+LEX PART: ex3a.l 
+%{
+ #include "ex3a.tab.h" 
+%}
+%%
+"=" {printf("\n Operator is EQUAL");} 
+"+" {printf("\n Operator is PLUS");} 
+"-" {printf("\n Operator is MINUS");} 
+"/" {printf("\n Operator is DIVISION");} 
+"*" {printf("\n Operator is MULTIPLICATION");} 
+[a-zA-Z]*[0-9]* {printf("\n Identifier is %s",yytext);return ID;} 
+. return yytext[0]; 
+\n return 0; 
+%%
+int yywrap() 
+{ 
+ return 1; 
+} 
+
+YACC PART: ex3a.y
+%{
+ #include<stdio.h> 
+%}
+%token A 
+%token ID 
+%%
+statement:A'='E 
+| E{ 
+ printf("\n Valid arithmetic expression"); 
+ $$=$1; 
+};
+E:E'+'ID 
+|E'-'ID 
+|E'*'ID 
+|E'/'ID 
+|ID 
+; 
+%%
+extern FILE *yyin; 
+main() 
+{ 
+ do
+{ 
+yyparse(); 
+}while(!feof(yyin)); 
+} 
+yyerror(char*s) 
+{ 
+} 
+
+Output: 
+[root@localhost]# lex ex3a.1
+[root@localhost]# yacc –d ex3a.y
+[root@localhost]# gcc lex.yy.c ex3a.tab.c 
+[root@localhost]# ./a.out 
+x=a+b; 
+Identifier is x 
+Operator is EQUAL 
+Identifier is a 
+Operator is PLUS 
+Identifier is b 

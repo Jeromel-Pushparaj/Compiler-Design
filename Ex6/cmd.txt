@@ -1,4 +1,24 @@
-lex code_optimization.l
-yacc -d code_optimization.y
-gcc y.tab.c lex.yy.c -o optimizer -ll
+gcc code_opt.cs -o optimizer 
 ./optimizer
+
+Enter the Number of Values:5
+left: a
+right: 9
+left: b
+right: c+d
+left: e
+right: c+d
+left: f
+right: b+e
+left: r
+right: :f
+Intermediate Code
+a=9 b=c+d e=c+d f=b+e r=:  After Dead Code Eliminationb =c+d
+e =c+d
+r =:
+Eliminate Common Expressionb =c+d
+b =c+d
+r =:
+Optimized Code�=c+d
+b=c+d
+r=:
